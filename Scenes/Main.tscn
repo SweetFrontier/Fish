@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://lcuk5mtg1ahs"]
+[gd_scene load_steps=3 format=3 uid="uid://lcuk5mtg1ahs"]
 
-[ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
+[ext_resource type="PackedScene" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
+[ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMaps" parent="." instance=ExtResource("1_d6tib")]
+
+[node name="Elevator" parent="." instance=ExtResource("2_4pedu")]
+position = Vector2(2688, -2112)
