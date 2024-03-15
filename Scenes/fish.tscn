@@ -1,34 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsxdaugx1a53f"]
+[gd_scene load_steps=6 format=3 uid="uid://2vy2j7iddkmf"]
 
-[ext_resource type="Script" path="res://Scripts/Fish.gd" id="1_43fhj"]
-[ext_resource type="Texture2D" path="res://Art/Fish.png" id="2_dxuxi"]
+[ext_resource type="Script" path="res://Scripts/fish.gd" id="1_yo2by"]
+[ext_resource type="Texture2D" uid="uid://dxghisrm6ter8" path="res://Art/Fish.png" id="2_j2pdb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oe1sm"]
-atlas = ExtResource("2_dxuxi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wl0r"]
+atlas = ExtResource("2_j2pdb")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_alsqq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpvr3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oe1sm")
+"texture": SubResource("AtlasTexture_8wl0r")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vfqa"]
-size = Vector2(32, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7b75"]
+size = Vector2(32, 16)
 
 [node name="Fish" type="CharacterBody2D"]
-script = ExtResource("1_43fhj")
+script = ExtResource("1_yo2by")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_alsqq")
+sprite_frames = SubResource("SpriteFrames_dpvr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_5vfqa")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_j7b75")

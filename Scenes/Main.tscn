@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lcuk5mtg1ahs"]
 
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
-[ext_resource type="PackedScene" uid="uid://bsxdaugx1a53f" path="res://Scenes/fish.tscn" id="2_48kp2"]
+[ext_resource type="PackedScene" uid="uid://2vy2j7iddkmf" path="res://Scenes/Fish.tscn" id="2_48kp2"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,3 +9,5 @@
 
 [node name="Fish" parent="." instance=ExtResource("2_48kp2")]
 position = Vector2(2112, -1984)
+
+[node name="Camera2D" type="Camera2D" parent="Fish"]
