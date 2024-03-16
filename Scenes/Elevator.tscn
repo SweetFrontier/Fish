@@ -46,7 +46,6 @@ position = Vector2(127.5, 227)
 shape = SubResource("RectangleShape2D_lswfj")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
-position = Vector2(0, 1857.93)
 
 [node name="BucketCollision" type="CollisionPolygon2D" parent="Blocker"]
 position = Vector2(30, 68)
