@@ -23,6 +23,7 @@ size = Vector2(32, 16)
 
 [node name="Fish" type="CharacterBody2D"]
 script = ExtResource("1_yo2by")
+JUMP_VELOCITY = -1000.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpvr3")
