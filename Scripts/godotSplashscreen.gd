@@ -8,7 +8,7 @@ extends Control
 var skipTimer : float = 0;
 var skipVisible : bool = false
 
-var startScene : String = "res://Scenes/Main.tscn"
+var startScene : String = "res://Scenes/Screens/MainMenu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
