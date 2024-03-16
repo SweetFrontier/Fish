@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cveytbhngs47s"]
+[gd_scene load_steps=8 format=3 uid="uid://cveytbhngs47s"]
 
 [ext_resource type="Texture2D" uid="uid://byvoyu5r3lfxn" path="res://Art/ElevatorOpen.png" id="1_ym2or"]
 [ext_resource type="Script" path="res://Scripts/Elevator.gd" id="2_nhjnr"]
+[ext_resource type="Texture2D" uid="uid://qefo2eaojtou" path="res://Art/ElevatorBackground.png" id="3_2nvck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lswfj"]
 size = Vector2(121, 312)
@@ -37,6 +38,7 @@ _data = {
 script = ExtResource("2_nhjnr")
 
 [node name="TextureRect" type="TextureRect" parent="Elevator"]
+z_index = 1
 offset_right = 256.0
 offset_bottom = 384.0
 texture = ExtResource("1_ym2or")
@@ -46,6 +48,11 @@ position = Vector2(127.5, 227)
 shape = SubResource("RectangleShape2D_lswfj")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Blocker"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_2nvck")
 
 [node name="BucketCollision" type="CollisionPolygon2D" parent="Blocker"]
 position = Vector2(30, 68)

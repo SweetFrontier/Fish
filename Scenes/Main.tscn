@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lcuk5mtg1ahs"]
+[gd_scene load_steps=5 format=3 uid="uid://lcuk5mtg1ahs"]
 
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
 [ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
 [ext_resource type="PackedScene" uid="uid://2vy2j7iddkmf" path="res://Scenes/fish.tscn" id="2_48kp2"]
+[ext_resource type="Texture2D" uid="uid://dym5tiye8h3sr" path="res://Art/Grate.png" id="4_bboge"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +17,10 @@ JUMP_VELOCITY = -650.0
 
 [node name="Elevator" parent="." instance=ExtResource("2_4pedu")]
 position = Vector2(2560, -2304)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 11
+offset_left = 2560.0
+offset_top = -1920.0
+offset_right = 2816.0
+texture = ExtResource("4_bboge")
