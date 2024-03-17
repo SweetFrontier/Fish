@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://2vy2j7iddkmf"]
+[gd_scene load_steps=40 format=3 uid="uid://2vy2j7iddkmf"]
 
 [ext_resource type="Script" path="res://Scripts/fish.gd" id="1_yo2by"]
 [ext_resource type="Texture2D" uid="uid://dxghisrm6ter8" path="res://Art/Fish.png" id="2_j2pdb"]
@@ -218,10 +218,99 @@ animations = [{
 "speed": 35.0
 }]
 
+[sub_resource type="Animation" id="Animation_ydnbc"]
+resource_name = "1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_w4ay0"]
+resource_name = "0"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [0.0, -1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_gbueh"]
+resource_name = "2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [2.0944, -0.20944]
+}
+
+[sub_resource type="Animation" id="Animation_o14b3"]
+resource_name = "3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [2.21657, 4.53786]
+}
+
+[sub_resource type="Animation" id="Animation_ol80f"]
+resource_name = "4"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [-0.698132, 0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anokh"]
+_data = {
+"0": SubResource("Animation_w4ay0"),
+"1": SubResource("Animation_ydnbc"),
+"2": SubResource("Animation_gbueh"),
+"3": SubResource("Animation_o14b3"),
+"4": SubResource("Animation_ol80f")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7b75"]
 size = Vector2(32, 16)
 
-[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("ExploPoly", "AnimatedBody", "fishSound")]
+[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("ExploPoly", "AnimatedBody", "fishSound", "animator")]
 z_index = 10
 z_as_relative = false
 script = ExtResource("1_yo2by")
@@ -229,12 +318,19 @@ JUMP_VELOCITY = -1000.0
 ExploPoly = NodePath("explodeablePolygon")
 AnimatedBody = NodePath("AnimatedSprite2D")
 fishSound = NodePath("Fishsound")
+animator = NodePath("rotato")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -0.20944
 scale = Vector2(0.667, 0.667)
 sprite_frames = SubResource("SpriteFrames_dpvr3")
 animation = &"flop5"
 autoplay = "default"
+
+[node name="rotato" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_anokh")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

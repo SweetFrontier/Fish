@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var ExploPoly : explodeablePolygon
 @export var AnimatedBody : AnimatedSprite2D
 @export var fishSound : AudioStreamPlayer
+@export var animator : AnimationPlayer
 
 var currAnimation : int = 0
 var dead : bool = false
@@ -37,6 +38,7 @@ func _physics_process(delta):
 		if (rando >= currAnimation):
 			rando+=1
 		currAnimation = rando
+		animator.play(str(randi_range(0,4)))
 		fishSound.play()
 		AnimatedBody.play("flop"+str(rando))
 
