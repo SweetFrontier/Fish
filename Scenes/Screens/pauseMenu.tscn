@@ -314,8 +314,7 @@ text = "32
 [node name="Music" type="Label" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "Music
-"
+text = "Music"
 horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="TextureRect/VBoxContainer/Music"]
