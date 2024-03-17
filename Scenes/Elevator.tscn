@@ -13,8 +13,8 @@
 size = Vector2(121, 312)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ltkns"]
-a = Vector2(226, 297)
-b = Vector2(-30, 293)
+a = Vector2(227, 296)
+b = Vector2(-28, 296)
 
 [sub_resource type="Animation" id="Animation_qlc63"]
 resource_name = "level_down"
@@ -123,7 +123,7 @@ polygon = PackedVector2Array(173, 4, 174, 300, 21, 298, 22, 9, 3, 9, -1, 314, 19
 disabled = true
 
 [node name="FloorCollision" type="CollisionShape2D" parent="Blocker"]
-position = Vector2(30, 68)
+position = Vector2(28, 88)
 shape = SubResource("SegmentShape2D_ltkns")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

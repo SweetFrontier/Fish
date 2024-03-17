@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var AnimatedBody : AnimatedSprite2D
 @export var fishSound : AudioStreamPlayer
 @export var animator : AnimationPlayer
+@export var joey : Node
 
 var currAnimation : int = 0
 var dead : bool = false
@@ -55,8 +56,10 @@ func _physics_process(delta):
 
 
 func jumpedOff(body, jumpedRight):
+	EXPLODE_ON_IMPACT = true
+	joey.show()
 	if(!jumpedRight):
-		EXPLODE_ON_IMPACT = true
+		joey.position.x = -1191
 
 
 func escape_ending(body: Node2D) -> void:
