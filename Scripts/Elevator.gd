@@ -37,7 +37,7 @@ func elevator_finished() -> void:
 		
 func audio_start():
 	$"../AudioStreamPlayer".play(0)
-		
+	$"../../Music".stop()
 
 func _on_audio_stream_player_2d_finished() -> void:
 	await get_tree().create_timer(2.0).timeout
