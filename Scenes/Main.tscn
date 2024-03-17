@@ -34,6 +34,15 @@ scale = Vector2(0.46518, 0.46518)
 texture = ExtResource("3_4u5x8")
 expand_mode = 3
 
+[node name="DuhText" type="RichTextLabel" parent="Fish"]
+visible = false
+offset_left = -94.0
+offset_top = -25.0
+offset_right = 106.0
+offset_bottom = 25.0
+text = "What did you think was
+going to happen here?"
+
 [node name="Elevator" parent="." instance=ExtResource("2_4pedu")]
 position = Vector2(2560, -2304)
 

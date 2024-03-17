@@ -31,6 +31,7 @@ func _physics_process(delta):
 			ExploPoly.show()
 			AnimatedBody.hide()
 			ExploPoly.explode()
+			$DuhText.visible = true
 			dead = true
 		velocity.y = JUMP_VELOCITY
 		#animation
