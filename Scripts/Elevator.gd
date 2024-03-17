@@ -22,11 +22,13 @@ func _input(event):
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	fish_here = true
+	if (body.name == "Fish"):
+		fish_here = true
 
 
 func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	fish_here = false
+	if (body.name == "Fish"):
+		fish_here = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
