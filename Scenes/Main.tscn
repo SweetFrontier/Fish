@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://lcuk5mtg1ahs"]
+[gd_scene load_steps=7 format=3 uid="uid://lcuk5mtg1ahs"]
 
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
 [ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
 [ext_resource type="PackedScene" uid="uid://2vy2j7iddkmf" path="res://Scenes/fish.tscn" id="2_48kp2"]
 [ext_resource type="Texture2D" uid="uid://dym5tiye8h3sr" path="res://Art/Elevator/Grate.png" id="4_bboge"]
-[ext_resource type="PackedScene" uid="uid://dk1owjnbevvvu" path="res://Scenes/Screens/pauseMenu.tscn" id="5_15g76"]
+[ext_resource type="PackedScene" path="res://Scenes/Screens/pauseMenu.tscn" id="5_15g76"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shkuc"]
+size = Vector2(1290, 64)
 
 [node name="Main" type="Node2D"]
 
@@ -28,3 +30,22 @@ offset_right = 2816.0
 texture = ExtResource("4_bboge")
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_15g76")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(112, -1856)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-635, 32)
+shape = SubResource("RectangleShape2D_shkuc")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(4168, -1856)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-635, 32)
+shape = SubResource("RectangleShape2D_shkuc")
+
+[connection signal="body_entered" from="Area2D" to="Fish" method="jumpedOff" binds= [false]]
+[connection signal="body_entered" from="Area2D2" to="Fish" method="jumpedOff" binds= [false]]

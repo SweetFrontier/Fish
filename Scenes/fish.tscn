@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://2vy2j7iddkmf"]
+[gd_scene load_steps=7 format=3 uid="uid://2vy2j7iddkmf"]
 
 [ext_resource type="Script" path="res://Scripts/fish.gd" id="1_yo2by"]
 [ext_resource type="Texture2D" uid="uid://dxghisrm6ter8" path="res://Art/Fish.png" id="2_j2pdb"]
+[ext_resource type="Script" path="res://Scripts/explodeablePolygon.gd" id="3_vdjfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8wl0r"]
 atlas = ExtResource("2_j2pdb")
@@ -21,15 +22,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7b75"]
 size = Vector2(32, 16)
 
-[node name="Fish" type="CharacterBody2D"]
+[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("ExploPoly")]
 z_index = 10
 z_as_relative = false
 script = ExtResource("1_yo2by")
 JUMP_VELOCITY = -1000.0
+ExploPoly = NodePath("explodeablePolygon")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_dpvr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_j7b75")
+
+[node name="explodeablePolygon" type="Polygon2D" parent="."]
+position = Vector2(-16, -16)
+texture = ExtResource("2_j2pdb")
+polygon = PackedVector2Array(32, 0, 0, 0, 0, 32, 32, 32)
+script = ExtResource("3_vdjfy")
+shard_shrink_rate = 0.99
+min_shard_size = 0.05
+x_init_velocity = 20
+y_init_velocity = 40
+shard_speed = 3.0
+rotation_speed = 0.1
+shard_gravity = 40.0
