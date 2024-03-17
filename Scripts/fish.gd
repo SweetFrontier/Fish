@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	if Input.is_action_pressed("restart"):
+	if Input.is_action_just_pressed("restart"):
 		var current_scene = get_tree().get_current_scene()
 		get_tree().reload_current_scene()
 	if(dead):
