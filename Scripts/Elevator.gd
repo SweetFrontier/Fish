@@ -31,6 +31,14 @@ func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, l
 		fish_here = false
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if (anim_name == "level_down"):
+func elevator_finished() -> void:
 		$Node.visible = true
+		
+		
+func audio_start():
+	$"../AudioStreamPlayer".play(0)
+		
+
+func _on_audio_stream_player_2d_finished() -> void:
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/Screens/CreditScreen.tscn")
