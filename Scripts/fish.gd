@@ -5,7 +5,10 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -400.0
 @export var EXPLODE_ON_IMPACT : bool = false
 @export var ExploPoly : explodeablePolygon
+@export var AnimatedBody : AnimatedSprite2D
+@export var fishSound : AudioStreamPlayer
 
+var currAnimation : int = 0
 var dead : bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -24,9 +27,18 @@ func _physics_process(delta):
 	# Handle jump.
 	if is_on_floor():
 		if(EXPLODE_ON_IMPACT):
+			ExploPoly.show()
+			AnimatedBody.hide()
 			ExploPoly.explode()
 			dead = true
 		velocity.y = JUMP_VELOCITY
+		#animation
+		var rando : int = randi_range(1,4)
+		if (rando >= currAnimation):
+			rando+=1
+		currAnimation = rando
+		fishSound.play()
+		AnimatedBody.play("flop"+str(rando))
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
