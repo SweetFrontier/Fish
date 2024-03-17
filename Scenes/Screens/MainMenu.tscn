@@ -44,11 +44,12 @@ offset_top = 196.0
 offset_right = 834.0
 offset_bottom = 392.0
 theme_override_font_sizes/font_size = 34
-text = "Start 
+text = "Start
 Flip &
- Flopping"
+Flopping"
 
 [node name="QuitButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 400.0
