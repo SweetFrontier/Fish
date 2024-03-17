@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbpvtqy7ykrbx"
-path="res://.godot/imported/ElevatorClosed.png-1dabfd01e48657e3eb2229a18a2de7d0.ctex"
+uid="uid://byvoyu5r3lfxn"
+path="res://.godot/imported/ElevatorOpen.png-104177b829ee0e7d62478a1aa884edba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ElevatorClosed.png"
-dest_files=["res://.godot/imported/ElevatorClosed.png-1dabfd01e48657e3eb2229a18a2de7d0.ctex"]
+source_file="res://Art/Elevator/ElevatorOpen.png"
+dest_files=["res://.godot/imported/ElevatorOpen.png-104177b829ee0e7d62478a1aa884edba.ctex"]
 
 [params]
 

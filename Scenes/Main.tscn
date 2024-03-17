@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
 [ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
 [ext_resource type="PackedScene" uid="uid://2vy2j7iddkmf" path="res://Scenes/fish.tscn" id="2_48kp2"]
-[ext_resource type="Texture2D" uid="uid://dym5tiye8h3sr" path="res://Art/Grate.png" id="4_bboge"]
+[ext_resource type="Texture2D" uid="uid://dym5tiye8h3sr" path="res://Art/Elevator/Grate.png" id="4_bboge"]
 [ext_resource type="PackedScene" uid="uid://dk1owjnbevvvu" path="res://Scenes/Screens/pauseMenu.tscn" id="5_15g76"]
+
 
 [node name="Main" type="Node2D"]
 
