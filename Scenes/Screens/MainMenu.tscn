@@ -26,7 +26,9 @@ _data = {
 "fish_spin": SubResource("Animation_6344t")
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_trfaj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
