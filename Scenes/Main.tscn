@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://lcuk5mtg1ahs"]
+[gd_scene load_steps=10 format=3 uid="uid://lcuk5mtg1ahs"]
 
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
 [ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
 [ext_resource type="PackedScene" uid="uid://2vy2j7iddkmf" path="res://Scenes/fish.tscn" id="2_48kp2"]
+[ext_resource type="Texture2D" uid="uid://1y4nj5v5khjw" path="res://Art/Freedom.png" id="3_4u5x8"]
 [ext_resource type="Texture2D" uid="uid://dym5tiye8h3sr" path="res://Art/Elevator/Grate.png" id="4_bboge"]
 [ext_resource type="PackedScene" uid="uid://bakpaqshc5ke6" path="res://Scenes/Screens/pauseMenu.tscn" id="5_15g76"]
 [ext_resource type="AudioStream" uid="uid://ct6pl8gp3mu41" path="res://Sounds/Music/SelectJobPresto.mp3" id="7_2py8w"]
@@ -22,6 +23,16 @@ position = Vector2(2112, -1984)
 JUMP_VELOCITY = -650.0
 
 [node name="Camera2D" type="Camera2D" parent="Fish"]
+
+[node name="TextureRect" type="TextureRect" parent="Fish"]
+visible = false
+offset_left = 35.0
+offset_top = -164.0
+offset_right = 321.0
+offset_bottom = 89.0
+scale = Vector2(0.46518, 0.46518)
+texture = ExtResource("3_4u5x8")
+expand_mode = 3
 
 [node name="Elevator" parent="." instance=ExtResource("2_4pedu")]
 position = Vector2(2560, -2304)

@@ -59,4 +59,6 @@ func jumpedOff(body, jumpedRight):
 
 
 func escape_ending(body: Node2D) -> void:
-	pass # Replace with function body.
+	$TextureRect.visible = true
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/Screens/CreditScreen.tscn")
