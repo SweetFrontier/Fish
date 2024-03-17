@@ -56,3 +56,7 @@ func _physics_process(delta):
 func jumpedOff(body, jumpedRight):
 	if(!jumpedRight):
 		EXPLODE_ON_IMPACT = true
+
+
+func escape_ending(body: Node2D) -> void:
+	pass # Replace with function body.

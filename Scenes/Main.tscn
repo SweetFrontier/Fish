@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://lcuk5mtg1ahs"]
+[gd_scene load_steps=9 format=3 uid="uid://lcuk5mtg1ahs"]
 
 [ext_resource type="PackedScene" uid="uid://c70j06kp51u3u" path="res://Scenes/TileMaps.tscn" id="1_d6tib"]
 [ext_resource type="PackedScene" uid="uid://cveytbhngs47s" path="res://Scenes/Elevator.tscn" id="2_4pedu"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shkuc"]
 size = Vector2(1290, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns48l"]
+size = Vector2(1465, 100)
 
 [node name="Main" type="Node2D"]
 
@@ -52,7 +55,13 @@ shape = SubResource("RectangleShape2D_shkuc")
 process_mode = 3
 stream = ExtResource("7_2py8w")
 autoplay = true
-bus = &"Music"
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(-2424, -522)
+shape = SubResource("RectangleShape2D_ns48l")
 
 [connection signal="body_entered" from="Area2D" to="Fish" method="jumpedOff" binds= [false]]
 [connection signal="body_entered" from="Area2D2" to="Fish" method="jumpedOff" binds= [false]]
+[connection signal="body_entered" from="Area2D3" to="Fish" method="escape_ending"]
